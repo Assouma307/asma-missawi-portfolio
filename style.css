@@ -394,7 +394,6 @@ footer {
         padding: 23px;
     }
 }
-```css
 .reveal {
     opacity: 0;
     transform: translateY(20px);
@@ -418,6 +417,4 @@ nav a.active {
         transition-duration: 0.01ms !important;
     }
 }
-```
-
 ```
