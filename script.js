@@ -1,4 +1,3 @@
-```javascript
 document.addEventListener("DOMContentLoaded", () => {
     // Animation d'apparition des cartes
     const cards = document.querySelectorAll(
@@ -43,4 +42,3 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
-```
