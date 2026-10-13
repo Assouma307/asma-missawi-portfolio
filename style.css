@@ -416,3 +416,96 @@ nav a.active {
         transition-duration: 0.01ms !important;
     }
 }
+/* Apparition progressive au chargement */
+.hero-content {
+    animation: slideInLeft 0.9s ease both;
+}
+
+.hero-card {
+    animation: floatIn 1s ease both, floatCard 4s ease-in-out 1s infinite;
+}
+
+/* Apparition des sections au défilement */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Effets au survol des cartes */
+.skill-card,
+.project-card {
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.skill-card:hover,
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(108, 92, 231, 0.14);
+}
+
+/* Boutons */
+.button,
+.contact-links a {
+    transition: transform 0.3s ease, background 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.button:hover,
+.contact-links a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(108, 92, 231, 0.18);
+}
+
+/* Animations */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-35px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes floatIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px) rotate(2deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(2deg);
+    }
+}
+
+@keyframes floatCard {
+    0%, 100% {
+        transform: translateY(0) rotate(2deg);
+    }
+    50% {
+        transform: translateY(-8px) rotate(2deg);
+    }
+}
+
+/* Respecter les préférences d'accessibilité */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
