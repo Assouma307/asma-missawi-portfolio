@@ -509,3 +509,22 @@ nav a.active {
         transform: none;
     }
 }
+.typing-title {
+    min-height: 2em;
+    color: var(--text);
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.typing-cursor {
+    display: inline-block;
+    color: var(--primary);
+    font-weight: 400;
+    animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
